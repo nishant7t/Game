@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg-primary: #0d0f14;
+  --bg-secondary: #13161e;
+  --bg-card: #1a1d28;
+  --bg-input: #0d0f14;
+  --border: #2a2d3d;
+  --text-primary: #e8eaf0;
+  --text-secondary: #7c8099;
+  --text-muted: #4a4e63;
+  --accent: #6c63ff;
+  --accent-hover: #7c74ff;
+  --green: #00d084;
+  --red: #ff4757;
+  --gold: #ffd700;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Rajdhani', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  letter-spacing: 0.04em;
+}
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover:not(:disabled) { background: var(--accent-hover); transform: translateY(-1px); }
+.btn-green { background: var(--green); color: #000; }
+.btn-green:hover:not(:disabled) { filter: brightness(1.1); transform: translateY(-1px); }
+.btn-danger { background: var(--red); color: #fff; }
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+.btn-outline:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.btn-full { width: 100%; }
+
+/* ── Cards ── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+/* ── Form elements ── */
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.form-group label { font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; }
+.form-group input, .form-group select {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  padding: 10px 14px;
+  transition: border-color 0.15s;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+.form-group .error { color: var(--red); font-size: 0.8rem; }
+
+/* ── Alert ── */
+.alert { padding: 12px 16px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 16px; }
+.alert-error { background: rgba(255,71,87,0.15); border: 1px solid rgba(255,71,87,0.3); color: var(--red); }
+.alert-success { background: rgba(0,208,132,0.15); border: 1px solid rgba(0,208,132,0.3); color: var(--green); }
+
+/* ── Badge ── */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Rajdhani', sans-serif;
+}
+.badge-win { background: rgba(0,208,132,0.2); color: var(--green); }
+.badge-loss { background: rgba(255,71,87,0.2); color: var(--red); }
+
+/* ── Result overlay (win/loss flash) ── */
+.result-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  pointer-events: none;
+  z-index: 999;
+  animation: resultPop 1.2s ease forwards;
+}
+.result-overlay.win { color: var(--green); }
+.result-overlay.loss { color: var(--red); }
+
+@keyframes resultPop {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+  30% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  70% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* ── Game page layout ── */
+.game-page {
+  max-width: 680px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+.game-title { font-size: 2.2rem; margin-bottom: 8px; }
+.game-subtitle { color: var(--text-secondary); margin-bottom: 32px; font-size: 0.9rem; }

@@ -1,0 +1,151 @@
+.dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+
+.dashboard-hero {
+  margin-bottom: 32px;
+}
+
+.dashboard-hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 6px;
+}
+
+.dashboard-hero p {
+  color: var(--text-secondary);
+}
+
+.accent { color: var(--accent); }
+.green { color: var(--green); }
+.red { color: var(--red); }
+.gold { color: var(--gold); }
+
+/* Stats */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 700px) { .stats-row { grid-template-columns: repeat(2, 1fr); } }
+
+.stat-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Game grid */
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 600px) { .game-grid { grid-template-columns: 1fr; } }
+
+.game-card {
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: block;
+}
+
+.game-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(108,99,255,0.2);
+}
+
+.game-emoji {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.game-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.game-card p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.game-edge {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.04);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* Provably fair section */
+.fair-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.fair-info p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.seed-display {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.seed-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.seed-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: 130px;
+}
+
+.seed-row code {
+  font-size: 0.8rem;
+  color: var(--accent);
+  word-break: break-all;
+}
