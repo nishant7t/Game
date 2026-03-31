@@ -2,7 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
 const User = require('./User');
-const { generateServerSeed, hashServerSeed } = require('../utils/provablyFair');
+const { generateServerSeed, hashServerSeed } = require('./provablyFair');
 
 const router = express.Router();
 
