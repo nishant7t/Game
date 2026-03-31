@@ -1,6 +1,6 @@
 const express = require('express');
 const { body, query, validationResult } = require('express-validator');
-const { protect } = require('./auth');
+const { protect } = require('./protect');
 const User = require('./User');
 const Bet = require('./Bet');
 const { generateServerSeed, hashServerSeed } = require('./provablyFair');
