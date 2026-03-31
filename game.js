@@ -1,9 +1,9 @@
 const express = require('express');
 const { body, validationResult } = require('express-validator');
 const rateLimit = require('express-rate-limit');
-const { protect } = require('../middleware/auth');
-const User = require('../models/User');
-const Bet = require('../models/Bet');
+const { protect } = require('./auth');
+const User = require('./User');
+const Bet = require('./Bet');
 const {
   resolveDice,
   resolveLimbo,
