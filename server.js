@@ -4,9 +4,9 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
 
-const authRoutes = require('./routes/auth');
-const userRoutes = require('./routes/user');
-const gameRoutes = require('./routes/game');
+const authRoutes = require('./auth');
+const userRoutes = require('./user');
+const gameRoutes = require('./game');
 
 const app = express();
 
