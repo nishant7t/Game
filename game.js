@@ -9,7 +9,7 @@ const {
   resolveLimbo,
   resolveCoinflip,
   verifyBet,
-} = require('../utils/provablyFair');
+} = require('./provablyFair');
 
 const router = express.Router();
 
