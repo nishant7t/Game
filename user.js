@@ -1,9 +1,9 @@
 const express = require('express');
 const { body, query, validationResult } = require('express-validator');
-const { protect } = require('../middleware/auth');
-const User = require('../models/User');
-const Bet = require('../models/Bet');
-const { generateServerSeed, hashServerSeed } = require('../utils/provablyFair');
+const { protect } = require('./auth');
+const User = require('./User');
+const Bet = require('./Bet');
+const { generateServerSeed, hashServerSeed } = require('./provablyFair');
 
 const router = express.Router();
 
