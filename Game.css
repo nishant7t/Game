@@ -1,0 +1,292 @@
+/* ── Game Controls ── */
+.game-controls { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+
+.control-row { display: flex; gap: 16px; }
+
+.range-input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(
+    to right,
+    var(--green) 0%,
+    var(--green) var(--val, 50%),
+    var(--border) var(--val, 50%),
+    var(--border) 100%
+  );
+  outline: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgba(108,99,255,0.3);
+}
+
+.stats-mini {
+  display: flex;
+  gap: 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.stat-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.stat-mini span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.stat-mini strong {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+}
+
+.bet-row {
+  display: flex;
+  gap: 8px;
+}
+
+.bet-row input { flex: 1; }
+
+.preset-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.preset-btn { padding: 6px 14px; font-size: 0.85rem; }
+
+.bet-btn { margin-top: 4px; font-size: 1.1rem; padding: 14px; }
+
+/* ── Dice Roll Display ── */
+.roll-display {
+  text-align: center;
+  padding: 24px;
+  margin-bottom: 24px;
+  border-color: var(--border);
+}
+
+.roll-display.won { border-color: var(--green); background: rgba(0,208,132,0.05); }
+.roll-display.lost { border-color: var(--red); background: rgba(255,71,87,0.05); }
+
+.roll-number {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.roll-target {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 6px 0;
+}
+
+.roll-verdict {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+/* ── Dice Bar ── */
+.dice-bar {
+  margin-bottom: 24px;
+  padding: 20px;
+}
+
+.dice-bar-track {
+  position: relative;
+  height: 12px;
+  background: var(--red);
+  border-radius: 6px;
+  overflow: visible;
+  margin-bottom: 8px;
+}
+
+.dice-bar-fill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 6px 0 0 6px;
+  transition: width 0.3s ease;
+}
+
+.dice-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  z-index: 2;
+  transition: left 0.4s ease;
+}
+.dice-marker.won { background: var(--green); }
+.dice-marker.lost { background: var(--red); }
+
+.dice-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ── Limbo ── */
+.limbo-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.limbo-result.won { border-color: var(--green); background: rgba(0,208,132,0.05); }
+.limbo-result.lost { border-color: var(--red); background: rgba(255,71,87,0.05); }
+
+.limbo-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.limbo-value {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.limbo-vs {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+/* ── Coinflip ── */
+.coin-container {
+  text-align: center;
+  padding: 40px;
+  margin-bottom: 24px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.coin-container.won { border-color: var(--green); background: rgba(0,208,132,0.05); }
+.coin-container.lost { border-color: var(--red); background: rgba(255,71,87,0.05); }
+
+.coin {
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.coin.spin {
+  animation: coinSpin 0.8s ease-in-out;
+}
+
+@keyframes coinSpin {
+  0% { transform: rotateY(0deg) scale(1); }
+  25% { transform: rotateY(90deg) scale(0.8); }
+  50% { transform: rotateY(180deg) scale(1.1); }
+  75% { transform: rotateY(270deg) scale(0.8); }
+  100% { transform: rotateY(360deg) scale(1); }
+}
+
+.coin-result-side {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.side-selector {
+  display: flex;
+  gap: 12px;
+}
+
+.side-btn {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.04em;
+}
+
+.side-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+.side-btn.active { border-color: var(--accent); background: rgba(108,99,255,0.15); color: var(--accent); }
+.side-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Fairness card ── */
+.fairness-card { margin-top: 0; }
+.fairness-card h3 { font-size: 1.1rem; margin-bottom: 12px; }
+
+.fairness-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.fairness-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.fairness-row span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: 120px;
+  margin-top: 2px;
+}
+
+.fairness-row code {
+  font-size: 0.78rem;
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.fairness-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
