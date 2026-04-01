@@ -1,24 +1,22 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import DiceGame from './pages/DiceGame';
-import LimboGame from './pages/LimboGame';
-import CoinflipGame from './pages/CoinflipGame';
-import History from './pages/History';
-import Navbar from './components/Navbar';
-import './App.css';
+import { AuthProvider, useAuth } from '../AuthContext';
+import Login from '../Login';
+import Register from '../Register';
+import Dashboard from '../Dashboard';
+import DiceGame from '../DiceGame';
+import LimboGame from '../LimboGame';
+import CoinflipGame from '../CoinflipGame';
+import History from '../History';
+import Navbar from '../Navbar';
+import '../App.css';
 
-// Protected route wrapper
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth();
   if (loading) return <div className="loading-screen">Loading...</div>;
   return user ? children : <Navigate to="/login" replace />;
 }
 
-// Public-only route (redirect to dashboard if logged in)
 function PublicRoute({ children }) {
   const { user, loading } = useAuth();
   if (loading) return <div className="loading-screen">Loading...</div>;
