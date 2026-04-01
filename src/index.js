@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from '../App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -10,17 +10,7 @@ root.render(
 );
 ```
 
-Commit it.
+Notice `../App` instead of `./App` — this tells it App.js is one folder up (at root level).
 
----
-
-But this is just the start — Create React App expects **all** your React files inside `src/`. So you'll need to move these files into `src/` too:
+Then change the build command back to just:
 ```
-src/App.js
-src/App.css
-src/AuthContext.js
-src/api.js
-src/Login.js
-src/Register.js
-src/Dashboard.js
-... all other React files
