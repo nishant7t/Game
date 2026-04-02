@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { getMe } from '../utils/api';
+import { getMe } from './api';
 
 const AuthContext = createContext(null);
 
@@ -7,7 +7,6 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // On mount, try to restore session from localStorage token
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
