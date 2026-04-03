@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './AuthContext';
-import Login from '../Login';
-import Register from '../Register';
-import Dashboard from '../Dashboard';
-import DiceGame from '../DiceGame';
-import LimboGame from '../LimboGame';
-import CoinflipGame from '../CoinflipGame';
-import History from '../History';
-import Navbar from '../Navbar';
-import '../App.css';
+import Login from './Login';
+import Register from './Register';
+import Dashboard from './Dashboard';
+import DiceGame from './DiceGame';
+import LimboGame from './LimboGame';
+import CoinflipGame from './CoinflipGame';
+import History from './History';
+import Navbar from './Navbar';
+import './App.css';
 
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth();
