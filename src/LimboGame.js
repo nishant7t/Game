@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { playLimbo } from '../utils/api';
-import { useAuth } from '../context/AuthContext';
+import { playLimbo } from './api';
+import { useAuth } from './AuthContext';
 import './Game.css';
 
 export default function LimboGame() {
