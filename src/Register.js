@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { register as registerApi } from '../utils/api';
-import { useAuth } from '../context/AuthContext';
+import { register as registerApi } from './api';
+import { useAuth } from './AuthContext';
 import './Auth.css';
 
 export default function Register() {
