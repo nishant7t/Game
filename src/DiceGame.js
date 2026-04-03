@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { playDice } from '../utils/api';
-import { useAuth } from '../context/AuthContext';
+import { playDice } from './api';
+import { useAuth } from './AuthContext';
 import './Game.css';
 
 export default function DiceGame() {
