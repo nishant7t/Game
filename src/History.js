@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getHistory, rotateSeeds, verifyBet } from '../utils/api';
-import { useAuth } from '../context/AuthContext';
+import { getHistory, rotateSeeds, verifyBet } from './api';
+import { useAuth } from './AuthContext';
 import './History.css';
 
 const GAME_EMOJIS = { dice: '🎲', limbo: '🚀', coinflip: '🪙' };
